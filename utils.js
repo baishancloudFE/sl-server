@@ -91,7 +91,7 @@ exports.relativeToAbsolute = (socket, relative = '') => {
     projectsDir,
     socket.uid,
     socket.project,
-    relative
+    relative.replace(/\\|\//g, path.sep)
   )
 }
 
