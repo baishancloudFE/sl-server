@@ -1,0 +1,22 @@
+{
+  "name": "sl-server",
+  "version": "0.0.1",
+  "description": "sl服务端",
+  "main": "master.js",
+  "dependencies": {
+    "chalk": "^2.4.0",
+    "igroot-builder": "^3.0.0-beta"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node master"
+  },
+  "bin": {
+    "sl-server": "./master.js"
+  },
+  "keywords": [
+    "sl"
+  ],
+  "author": "yutao.shi",
+  "license": "MIT"
+}
