@@ -22,7 +22,7 @@ exports.md5 = str => {
  * @param {Function} callback
  */
 exports.dirCheck = (checkpath, callback) => {
-  const dirs = checkpath.split(/\\+|\/+/)
+  const dirs = checkpath.split(path.sep)
 
   dirs[dirs.length - 1].indexOf('.') > -1 && dirs.pop()
   checkAndCreate(dirs, callback)
@@ -91,7 +91,7 @@ exports.relativeToAbsolute = (socket, relative = '') => {
     projectsDir,
     socket.uid,
     socket.project,
-    relative
+    relative.replace(/\\|\//g, path.sep)
   )
 }
 
