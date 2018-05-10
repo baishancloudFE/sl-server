@@ -33,7 +33,7 @@ exports.dirCheck = (checkpath, callback) => {
    * @param {Function} callback
    */
   function checkAndCreate(dirs, callback) {
-    const thePath = path.posix.join.apply(null, dirs)
+    const thePath = dirs.join(path.sep)
 
     fs.mkdir(thePath, (err, stats) => {
       // 已存在 or 创建成功
@@ -91,7 +91,7 @@ exports.relativeToAbsolute = (socket, relative = '') => {
     projectsDir,
     socket.uid,
     socket.project,
-    relative.replace(/\\|\//g, path.sep)
+    relative
   )
 }
 
